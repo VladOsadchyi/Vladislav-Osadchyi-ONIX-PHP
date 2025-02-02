@@ -33,7 +33,7 @@ $generatedFilename = createUniqueFilename($postTitle, $authorName);
 
 // Generate markdown file content
 $currentDate = date('Y-m-d');
-$categoriesYaml = "[\"" . implode("\", \"", $categories) . "\"]";
+$categoriesYaml = implode(", ", $categories); // Categories as comma-separated string
 $markdownTemplate = "---\ntitle: \"{$postTitle}\"\nauthor: \"{$authorName}\"\ncategories: {$categoriesYaml}\ndate: \"{$currentDate}\"\n---\n\nWrite your blog post here...";
 
 // Write to file
